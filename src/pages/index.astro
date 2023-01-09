@@ -6,11 +6,30 @@ import MainLayout from '../layouts/MainLayout.astro';
 // 	.then((data) => {
 // 		return data;
 // 	});
+
+function redirect(to: string) {
+	Astro.redirect(to)
+}
+
 ---
 <MainLayout title="Kenexar - Ticket bot">
-	<main>
-		<h1 class="">Heya</h1>
-		<h1>Counter = </h1>
-		<a href="/dashboard">Click me</a>
+	<main class="bg-slate-700 h-screen w-screen">
+		<header class="w-screen h-16 bg-slate-800 flex justify-between items-center text-white">
+			<span class="ml-4 text-2xl">Kenexar</span>
+			<div>
+				<a href="/dashboard" class="bg-gray-600 hover:bg-gray-700 active:bg-gray-500 transition px-5 py-1 rounded mr-4">Dashboard</a>
+				<a class="bg-green-600 hover:bg-green-700 
+				active:bg-green-500
+				 transition px-5 py-1 rounded mr-4" 
+				 href="/login">Login</a>
+			</div>
+			</header>
+		<div id="hero" class="h-96 bg-slate-500 text-white grid place-items-center">
+			<h1 class="text-4xl w-96 text-center font-medium">Der beste Ticket Bot der uns bekannten Welt!</h1>
+			<ul>
+				<li>Simple Setup</li>
+				<li>Performance</li>
+			</ul>
+		</div>
 	</main>
 </MainLayout>
