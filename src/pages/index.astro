@@ -1,7 +1,7 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
-import ErrorModel from "../components/ErrorModel";
-import discordLogo from "../assets/discord-mark-white.svg";
+import MainLayout from "@layouts/MainLayout.astro";
+import ErrorModel from "@components/ErrorModel";
+import discordLogo from "@assets/discord-mark-white.svg";
 const error = Astro.url.searchParams.get("error");
 ---
 
@@ -29,7 +29,7 @@ const error = Astro.url.searchParams.get("error");
 				>
 				<a
 					class="bg-green-600 flex items-center gap-2 hover:bg-green-700 active:bg-green-500 transition px-5 py-2 rounded mr-4"
-					href="/">
+					href="https://discord.com/api/oauth2/authorize?client_id=841508597577678880&permissions=8&scope=bot">
 					<img 
 					class="p-0 h-6 w-6"
 					src={discordLogo}/>
