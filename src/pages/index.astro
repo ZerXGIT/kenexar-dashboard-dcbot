@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import ErrorModel from "../components/ErrorModel";
+import discordLogo from "../assets/discord-mark-white.svg";
 const error = Astro.url.searchParams.get("error");
 ---
 
@@ -20,22 +21,26 @@ const error = Astro.url.searchParams.get("error");
 			class="w-screen h-16 bg-slate-800 flex justify-between items-center text-white"
 		>
 			<span class="ml-4 text-2xl">Kenexar</span>
-			<div>
+			<div class="flex items-center">
 				<a
 					href="/dashboard"
 					class="bg-gray-600 hover:bg-gray-700 active:bg-gray-500 transition px-5 py-2 rounded mr-4"
 					>Dashboard</a
 				>
 				<a
-					class="bg-green-600 hover:bg-green-700 active:bg-green-500 transition px-5 py-2 rounded mr-4"
-					href="/login">Login</a
+					class="bg-green-600 flex items-center gap-2 hover:bg-green-700 active:bg-green-500 transition px-5 py-2 rounded mr-4"
+					href="/">
+					<img 
+					class="p-0 h-6 w-6"
+					src={discordLogo}/>
+					Invite Bot</a
 				>
 			</div>
 		</header>
-		<div
+		<section
 			id="hero"
 			class="h-96 bg-slate-500 text-white grid place-items-center"
-		>
+			>
 			<h1 class="text-4xl w-96 text-center font-medium">
 				Der beste Ticket Bot der uns bekannten Welt!
 			</h1>
@@ -43,6 +48,6 @@ const error = Astro.url.searchParams.get("error");
 				<li>Simple Setup</li>
 				<li>Performance</li>
 			</ul>
-		</div>
+		</section>
 	</main>
 </MainLayout>
