@@ -3,9 +3,7 @@ const passport = require('passport');
 
 router.get('/login', passport.authenticate('discord', { scope: ['identify', 'email', 'guilds'] }));
 router.get('/redirect', passport.authenticate('discord', { failureRedirect: '/forbidden' }), (req, res) => {
-    
     res.send(200)
 });
-
 
 module.exports = router;

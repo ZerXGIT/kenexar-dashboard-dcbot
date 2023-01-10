@@ -5,16 +5,14 @@ const port = process.env.PORT || 3000;
 const session = require('express-session');
 const passport = require('passport');
 
-// Change dont listen to any other than /api
-
-
 const discordStrategy = require('./strategies/discordstrategy.cjs');
 
 main.use(session({
     secret: 'Secret Key',
     cookie: { maxAge: 60000 },
     saveUninitialized: false,
-    }));
+    resave: false
+}));
 
 // Routes
 const authRouter = require('./routes/auth.cjs');
@@ -23,8 +21,11 @@ const authRouter = require('./routes/auth.cjs');
 main.use(passport.initialize());
 main.use(passport.session());
 
+
 // Middleware
-main.use('auth', authRouter);
+main.use('/auth', authRouter);
+
+// Start server
 
 main.listen(port, () => {
     console.log(`KENEXAR BACKEND: listening at http://localhost:${port}`);    

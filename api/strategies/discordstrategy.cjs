@@ -12,6 +12,4 @@ passport.use(new DiscordStrategy({
     console.log(profile.email);
     console.log(profile.avatar);
     console.log(profile.discriminator);
-    
-}
-));
+}));
