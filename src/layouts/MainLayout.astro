@@ -24,7 +24,7 @@ const { title } = Astro.props;
 		<meta property="og:image" content="https://github.com/Kenexar/Kenexar/blob/master/assets/img/KenexarLogo_Transparent200x200.png?raw=true">
 		<link rel="manifest" href="/manifest.json" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>{title || "test"}</title>
 	</head>
 	<body>
 		<slot />
@@ -35,4 +35,25 @@ const { title } = Astro.props;
 	@tailwind components;
 	@tailwind utilities;
 
+
+	* {
+		scrollbar-width: auto;
+		scrollbar-color: #3b3b3b ;
+	}
+
+	/* Chrome, Edge, and Safari */
+	*::-webkit-scrollbar {
+		width: 11px;
+	}
+
+	*::-webkit-scrollbar-track {
+		background: none;
+		z-index: 999;
+	}
+
+	*::-webkit-scrollbar-thumb {
+		background-color: #676767;
+		border-radius: 10px;
+		z-index: 999;
+	}
 </style>

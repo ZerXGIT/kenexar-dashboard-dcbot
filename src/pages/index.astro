@@ -1,6 +1,10 @@
 ---
+// Components
 import MainLayout from "@layouts/MainLayout.astro";
 import ErrorModel from "@components/ErrorModel";
+import FooterComponent from "@components/Footer.astro";
+
+// Assets
 import discordLogo from "@assets/icons/discord-mark-white.svg";
 import checkMark from "@assets/icons/done-icon.svg";
 import heroImage from "@assets/hero-discord-logo.png";
@@ -21,7 +25,7 @@ const error = Astro.url.searchParams.get("error");
 			}
 		}}
 		<header
-			class="bg-[#090807] w-full z-10 px-9 lg:px-64 lg:absolute flex justify-between items-center h-14 text-white"
+			class="bg-[#090807] w-full px-9 lg:px-64 lg:absolute flex justify-between items-center h-14 text-white"
 		>
 
 			<span class="text-sm md:text-xl uppercase flex items-center">
@@ -92,15 +96,10 @@ const error = Astro.url.searchParams.get("error");
 					</a>
 				</div>
 
-				<img src={heroImage} alt="discord logo" class="hidden lg:block animate-[wiggle_2s_ease-in-out_infinite] h-96 w-96" />
+				<img src={heroImage} alt="discord logo" class="hidden z-0 lg:block animate-[wiggle_2s_ease-in-out_infinite] h-96 w-96" />
 			</div>
 		</section>
-		<!-- <section class="h-96">
-			<h1>Features</h1>
-			<ul>
-				<li>Simple Setup</li>
-				<li>Performance</li>
-			</ul>
-		</section> -->
+		
+		<FooterComponent/>
 	</main>
 </MainLayout>
