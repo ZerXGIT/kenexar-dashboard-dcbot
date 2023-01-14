@@ -1,11 +1,14 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
 import ErrorModel from "@components/ErrorModel";
-import discordLogo from "@assets/discord-mark-white.svg";
+import discordLogo from "@assets/icons/discord-mark-white.svg";
+import checkMark from "@assets/icons/done-icon.svg";
+import heroImage from "@assets/hero-discord-logo.png";
+
 const error = Astro.url.searchParams.get("error");
 ---
 
-<MainLayout title="Kenexar - Ticket bot">
+<MainLayout title="Kenexar - Discord bot">
 	<main class="bg-slate-700 h-screen w-screen overflow-x-hidden">
 		{() => {
 			if (error) {
@@ -18,14 +21,21 @@ const error = Astro.url.searchParams.get("error");
 			}
 		}}
 		<header
-			class="w-screen h-16 px-7 bg-slate-800 flex justify-between items-center text-white"
+			class="w-screen z-10 absolute h-16 px-64 bg-[#090807] flex justify-between items-center text-white"
 		>
-			<span class="text-2xl ">Kenexar</span>
+
+			<span class="text-2xl font-medium uppercase flex items-center">
+				<img
+				src="https://raw.githubusercontent.com/Kenexar/Kenexar/master/assets/img/KenexarLogo_Transparent200x200.png"
+				alt="Kenexar Logo"
+				class="h-12 w-12"
+			/>
+				Kenexar</span>
 			<div class="flex items-center">
 				<a
-					href="/dashboard"
-					class="bg-gray-600 hover:bg-gray-700 active:bg-gray-500 transition px-5 py-2 rounded mr-4"
-					>Dashboard</a
+					class="bg-gray-600 text-gray-300 cursor-not-allowed transition px-5 py-2 rounded mr-4"
+					>
+					Dashboard</a
 				>
 				<a
 					class="bg-green-600 flex items-center gap-2 hover:bg-green-700 active:bg-green-500 transition px-5 py-2 rounded mr-4"
@@ -40,22 +50,51 @@ const error = Astro.url.searchParams.get("error");
 		</header>
 		<section
 			id="hero"
-			class="h-screen bg-slate-500 text-white grid place-items-center"
+			style="background: linear-gradient(180deg, rgb(9, 8, 7) 50%, rgb(47, 9, 11) 100%)"
+			class="h-full text-white flex items-center justify-center"
 			>
-			<h1 class="text-4xl w-96 text-center font-medium">
-				Der beste Ticket Bot der uns bekannten Welt!
-			</h1>
-			<ul>
-				<li>Simple Setup</li>
-				<li>Performance</li>
-			</ul>
+			<div class="flex mx-64 w-screen items-center justify-between gap-20">
+				<div class="w-[35rem]">
+					<h1 class="text-5xl pb-4 mb-4 border-b solid border-t-gray-700 text-left font-bold">
+						Verbessern Sie Ihre Community-Interaktion mit dem besten Discord Bot der uns bekannten Welt!
+					</h1>
+					<span>
+						Verbessern Sie Ihre Community-Interaktion mit dem besten Discord Bot der uns bekannten Welt! Unser Open-Source Bot bietet die Flexibilität und Anpassbarkeit, um Ihre Anforderungen zu erfüllen.
+					</span>
+					<ul class="mt-5 list-inside font-semibold">
+						<li class="flex">
+							<img src={checkMark} class="w-7 h-7 mr-1" alt="check mark">
+							Open-Source
+						</li>
+						<li class="flex">
+							<img src={checkMark} class="w-7 h-7 mr-1" alt="check mark">
+							Performance
+						</li>
+						<li class="flex">
+							<img src={checkMark} class="w-7 h-7 mr-1" alt="check mark">
+							Easy Setup
+						</li>
+					</ul>
+					<a
+						class="bg-green-600 mt-5 flex justify-center items-center gap-2 hover:bg-green-700 active:bg-green-500 transition px-5 py-2 rounded mr-4"
+						href="https://discord.com/api/oauth2/authorize?client_id=841508597577678880&permissions=8&scope=bot">
+						<img 
+						class="p-0 h-6 w-6"
+						src={discordLogo}
+						alt="discord logo"/>
+							Invite Bot
+					</a>
+				</div>
+
+				<img src={heroImage} alt="discord logo" class="animate-[wiggle_2s_ease-in-out_infinite] h-96 w-96" />
+			</div>
 		</section>
-		<section class="h-96 bg-black">
+		<!-- <section class="h-96">
 			<h1>Features</h1>
 			<ul>
 				<li>Simple Setup</li>
 				<li>Performance</li>
 			</ul>
-		</section>
+		</section> -->
 	</main>
 </MainLayout>
