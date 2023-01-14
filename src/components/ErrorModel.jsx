@@ -15,6 +15,8 @@ const ErrorModel = (props) => {
             </div>
             <button onClick={() => {
                 setError(false);
+                window.location.href = '/';
+
             }} className='bg-red-900 py-2 px-5 rounded'>Close</button>
         </div>
     );

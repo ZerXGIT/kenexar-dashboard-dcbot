@@ -10,10 +10,11 @@ import tailwind from "@astrojs/tailwind";
 import node from "@astrojs/node";
 
 // https://astro.build/config
+import netlify from "@astrojs/netlify/functions";
+
+// https://astro.build/config
 export default defineConfig({
   output: 'server',
   integrations: [react(), tailwind()],
-  adapter: node({
-    mode: 'standalone'
-  })
+  adapter: netlify()
 });

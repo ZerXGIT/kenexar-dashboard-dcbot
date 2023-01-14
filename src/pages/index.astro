@@ -6,7 +6,7 @@ const error = Astro.url.searchParams.get("error");
 ---
 
 <MainLayout title="Kenexar - Ticket bot">
-	<main class="bg-slate-700 h-screen w-screen">
+	<main class="bg-slate-700 h-screen w-screen overflow-x-hidden">
 		{() => {
 			if (error) {
 				return (
@@ -18,9 +18,9 @@ const error = Astro.url.searchParams.get("error");
 			}
 		}}
 		<header
-			class="w-screen h-16 bg-slate-800 flex justify-between items-center text-white"
+			class="w-screen h-16 px-7 bg-slate-800 flex justify-between items-center text-white"
 		>
-			<span class="ml-4 text-2xl">Kenexar</span>
+			<span class="text-2xl ">Kenexar</span>
 			<div class="flex items-center">
 				<a
 					href="/dashboard"
@@ -39,11 +39,18 @@ const error = Astro.url.searchParams.get("error");
 		</header>
 		<section
 			id="hero"
-			class="h-96 bg-slate-500 text-white grid place-items-center"
+			class="h-screen bg-slate-500 text-white grid place-items-center"
 			>
 			<h1 class="text-4xl w-96 text-center font-medium">
 				Der beste Ticket Bot der uns bekannten Welt!
 			</h1>
+			<ul>
+				<li>Simple Setup</li>
+				<li>Performance</li>
+			</ul>
+		</section>
+		<section class="h-96 bg-black">
+			<h1>Features</h1>
 			<ul>
 				<li>Simple Setup</li>
 				<li>Performance</li>
