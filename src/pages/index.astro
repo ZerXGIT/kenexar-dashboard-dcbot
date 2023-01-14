@@ -61,7 +61,9 @@ const error = Astro.url.searchParams.get("error");
 		<section
 			id="hero"
 			style="background: linear-gradient(180deg, rgba(9, 8, 7, 0.5) 50%, rgba(47, 9, 11, 0.8) 100%); z-index: 1;"
-			class="h-full relative text-white flex items-center justify-center before:z-[-1] before:left-0 before:top-0 before:opacity-5 before:absolute before:content-[url('https://i.gyazo.com/d7b539b87816c74a1c0622eee4c4a096.png')]"
+			class="h-full relative text-white flex items-center justify-center
+			 before:z-[-1] overflow-hidden before:left-0 before:top-0 before:opacity-5 before:absolute 
+			 before:content-[url('https://i.gyazo.com/d7b539b87816c74a1c0622eee4c4a096.png')]"
 			>
 			<div class="flex mx-9 xl:mx-64 w-screen items-center justify-between gap-20">
 				<div class="w-full lg:w-[35rem]">
